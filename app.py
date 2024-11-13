@@ -9,6 +9,12 @@ from scoring_script.scoring import make_prediction
 from services.result_rationalizer import rationalize_result
 #from result_rationalizer import rationalize_result
 
+import nltk
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+
+# Ensure VADER lexicon is downloaded
+nltk.download('vader_lexicon')
+
 API_Key = st.secrets["openai_api_key"]
 secret_key = API_Key
 
